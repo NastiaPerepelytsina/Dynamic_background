@@ -22,7 +22,7 @@ document.addEventListener("click", function(e) {
     button.dataset.locked = String(!isLocked);
     icon.classList.toggle("fa-unlock", isLocked);
     icon.classList.toggle("fa-lock", !isLocked);
-    button.setAttribute("aria-label", isLocked ? "Lock color" : "Unlock color");
+    button.setAttribute("aria-label", isLocked ? "Unlock color" : "Lock color");
 });
 
 
@@ -33,7 +33,7 @@ function setRandomColor() {
         }
 
         cool.style.backgroundColor = generatRandomColor();
-        const text = cool.text = cool.querySelector("h2")
+        const text = cool.querySelector("h2")
         const button = cool.querySelector("button")
         const color =generatRandomColor()
         text.textContent = color
@@ -44,6 +44,8 @@ function setRandomColor() {
 }
 console.log(cools)
 setRandomColor()
+
+setInterval(setRandomColor, 1000);
 
 
 
