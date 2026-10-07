@@ -11,18 +11,18 @@ body{
     display: flex;
 
 }
-.cool{
+.column{
 height: 100vh;
     width: 20%;
     text-align: center;
 }
-.cool h2{
+.column h2{
     padding-top: 20px;
 }
-.cool i{
+.column i{
     font-size: 30px;
 }
-.cool button{
+.column button{
     padding: 10px 20px;
     cursor: pointer;
 }

@@ -1,8 +1,8 @@
 import chroma from "chroma-js";
 
-const cools = document.querySelectorAll('.cool');
+const columns = document.querySelectorAll('.column');
 
-function generatRandomColor() {
+function generateRandomColor() {
     return chroma.random().hex();
 }
 document.addEventListener("keydown", function(e) {
@@ -27,22 +27,20 @@ document.addEventListener("click", function(e) {
 
 
 function setRandomColor() {
-    cools.forEach((cool)=>{
-        if (cool.querySelector('[data-type="lock"]')?.dataset.locked === "true") {
+    columns.forEach((column)=>{
+        if (column.querySelector('[data-type="lock"]')?.dataset.locked === "true") {
             return;
         }
 
-        cool.style.backgroundColor = generatRandomColor();
-        const text = cool.querySelector("h2")
-        const button = cool.querySelector("button")
-        const color =generatRandomColor()
-        text.textContent = color
-        cool.style.color = color
-        setTextColor(text,color)
-        setTextColor(button,color)
+        const color = generateRandomColor();
+        const text = column.querySelector("h2");
+        const button = column.querySelector("button");
+        column.style.backgroundColor = color;
+        text.textContent = color;
+        setTextColor(text, color);
+        setTextColor(button, color);
     })
 }
-console.log(cools)
 setRandomColor()
 
 setInterval(setRandomColor, 1000);
